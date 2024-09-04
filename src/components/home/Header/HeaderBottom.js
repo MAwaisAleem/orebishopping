@@ -15,18 +15,24 @@ const HeaderBottom = () => {
   const navigate = useNavigate();
   const ref = useRef();
   useEffect(() => {
-    document.body.addEventListener("click", (e) => {
-      if (ref.current.contains(e.target)) {
+    const handleClick = (e) => {
+      if (ref.current && ref.current.contains(e.target)) {
         setShow(true);
       } else {
         setShow(false);
       }
-    });
+    };
+
+    document.body.addEventListener("click", handleClick);
+
+    return () => {
+      document.body.removeEventListener("click", handleClick);
+    };
   }, [show, ref]);
 
   const [searchQuery, setSearchQuery] = useState("");
   const [filteredProducts, setFilteredProducts] = useState([]);
-  const [showSearchBar, setShowSearchBar] = useState(false);
+  const [, setShowSearchBar] = useState(false);
 
   const handleSearch = (e) => {
     setSearchQuery(e.target.value);
