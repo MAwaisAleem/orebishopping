@@ -20,6 +20,7 @@ import Offer from "./pages/Offer/Offer";
 import Payment from "./pages/payment/Payment";
 import ProductDetails from "./pages/ProductDetails/ProductDetails";
 import Shop from "./pages/Shop/Shop";
+import SignIn from "./pages/Account/SignIn";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -64,6 +65,7 @@ const router = createBrowserRouter(
         <Route path="/cart" element={<Cart />}></Route>
         <Route path="/paymentgateway" element={<Payment />}></Route>
       </Route>
+      <Route path="/signin" element={<SignIn />}></Route>
     </Route>
   )
 );
