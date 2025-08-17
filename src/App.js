@@ -21,6 +21,7 @@ import Payment from "./pages/payment/Payment";
 import ProductDetails from "./pages/ProductDetails/ProductDetails";
 import Shop from "./pages/Shop/Shop";
 import SignIn from "./pages/Account/SignIn";
+import SignUp from "./pages/Account/SignUp";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -66,6 +67,7 @@ const router = createBrowserRouter(
         <Route path="/paymentgateway" element={<Payment />}></Route>
       </Route>
       <Route path="/signin" element={<SignIn />}></Route>
+      <Route path="/signup" element={<SignUp />}></Route>
     </Route>
   )
 );
